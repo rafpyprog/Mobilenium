@@ -8,9 +8,10 @@ Usage
 
 .. code-block:: python
 
-    >>> from mobilenium import Mobilenium
-    >>>
-    >>> mob = Mobilenium()
+    >>> from mobilenium import mobdriver
+    >>> 
+    >>> browsermob_path = 'path/to/browsermob-proxy'
+    >>> mob = mobdriver.Firefox(browsermob_binary=browsermob_path)
     >>> mob.get('http://python-requests.org')
     301
     >>> mob.response['redirectURL']
