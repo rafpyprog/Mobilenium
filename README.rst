@@ -23,7 +23,7 @@ Usage
     >>> mob.find_elements_by_tag_name('strong')[1].text
     'Behold, the power of Requests'
 
-Mobilenium allows you to use Selenium and have access to status codes and HTTP headers, without the need for manual labor. It is powered by Browsermob Proxy, which is embedded within Mobilenium.
+Mobilenium allows you to use Selenium and manipulate HTTP requests and responses, capture HTTP content, and export performance data, without the need for manual labor. It is powered by Browsermob Proxy.
 
 Installation
 ------------
