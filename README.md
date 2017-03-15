@@ -6,6 +6,8 @@ Mobilenium uses [Browsermob Proxy](https://github.com/AutomatedTester/browsermob
 Usage
 ------------
 
+.. code-block:: python
+
     >>> from mobilenium import Mobilenium
     >>>
     >>> mob = Mobilenium()
