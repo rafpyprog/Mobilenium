@@ -28,7 +28,7 @@ Mobilenium allows you to use Selenium and have access to status codes and HTTP h
 Installation
 ------------
  
-* Download Browsermob Proxy from http://proxy.browsermob.com/
+* First download the latest Browsermob Proxy release from the releases `page <https://github.com/lightbody/browsermob-proxy/releases>`_.
 * git clone https://rafael_ribeiro_dev@bitbucket.org/rafael_ribeiro_dev/mobilenium.git
 
 Contribute
