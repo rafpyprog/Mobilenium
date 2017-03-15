@@ -1,7 +1,7 @@
 Mobilenium: Selenium with steroids
 ==================================
 
-Mobilenium uses `Browsermob Proxy <https://github.com/AutomatedTester/browsermob-proxy-py>`_ to give superpowers to Selenium.
+Mobilenium uses `BrowserMob Proxy <https://github.com/AutomatedTester/browsermob-proxy-py>`_ to give superpowers to Selenium.
 
 Usage
 ------------
@@ -23,12 +23,12 @@ Usage
     >>> mob.find_elements_by_tag_name('strong')[1].text
     'Behold, the power of Requests'
 
-Mobilenium allows you to use Selenium and manipulate HTTP requests and responses, capture HTTP content, and export performance data, without the need for manual labor. It is powered by Browsermob Proxy.
+Mobilenium allows you to use Selenium and manipulate HTTP requests and responses, capture HTTP content, and export performance data, without the need for manual labor. It is powered by BrowserMob Proxy.
 
 Installation
 ------------
  
-* First download the latest Browsermob Proxy release from the releases `page <https://github.com/lightbody/browsermob-proxy/releases>`_.
+* First download the latest BrowserMob Proxy release from the releases `page <https://github.com/lightbody/browsermob-proxy/releases>`_.
 * git clone https://rafael_ribeiro_dev@bitbucket.org/rafael_ribeiro_dev/mobilenium.git
 
 Contribute
