@@ -29,7 +29,8 @@ Installation
 ------------
  
 * First download the latest BrowserMob Proxy release from the releases `page <https://github.com/lightbody/browsermob-proxy/releases>`_.
-* git clone https://rafael_ribeiro_dev@bitbucket.org/rafael_ribeiro_dev/mobilenium.git
+* git clone https://github.com/rafpyprog/Mobilenium.git
+* pip install -r requirements.txt
 
 Contribute
 ------------
