@@ -9,7 +9,7 @@ Usage
 .. code-block:: python
 
     >>> from mobilenium import mobidriver
-    >>> 
+    >>>
     >>> browsermob_path = 'path/to/browsermob-proxy'
     >>> mob = mobidriver.Firefox(browsermob_binary=browsermob_path)
     >>> mob.get('http://python-requests.org')
@@ -27,10 +27,12 @@ Mobilenium allows you to use Selenium and manipulate HTTP requests and responses
 
 Installation
 ------------
- 
-* First download the latest BrowserMob Proxy release from the releases `page <https://github.com/lightbody/browsermob-proxy/releases>`_.
-* git clone https://github.com/rafpyprog/Mobilenium.git
-* pip install -r requirements.txt
+
+* pip install mobilenium
+
+Dependencies
+------------
+Mobilenium depends on the BrowserMob Proxy. Download the latest BrowserMob Proxy binary from `page <https://github.com/lightbody/browsermob-proxy/releases>`_.
 
 Contribute
 ------------
