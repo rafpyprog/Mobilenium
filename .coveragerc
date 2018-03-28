@@ -1,5 +1,6 @@
 [run]
 omit = *eggs*
+       mobilenium/__version__.py
        tests/w3c.py
        dev.py
        setup.py

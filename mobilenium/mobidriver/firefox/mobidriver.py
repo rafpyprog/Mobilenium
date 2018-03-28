@@ -14,10 +14,11 @@ Copyright 2017 Rafael Alves Ribeiro
    limitations under the License.
 '''
 
+from browsermobproxy import Server
 from selenium import webdriver
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
-from browsermobproxy import Server
+from simplejson.scanner import JSONDecodeError
 
 
 class Mobilenium(webdriver.Firefox):
@@ -25,8 +26,7 @@ class Mobilenium(webdriver.Firefox):
                  firefox_profile=None, capabilities=None,
                  allow_insecure_certs=False, timeout=30):
         self.browsermob_binary = browsermob_binary
-        self.har = None
-        self.blacklist = []
+        self.blacklist = {}
         self.set_browsermob_proxy()
         self.add_proxy_to_profile(firefox_profile)
         self.firefox_binary = firefox_binary
@@ -52,7 +52,7 @@ class Mobilenium(webdriver.Firefox):
         server.start()
         self.proxy = server.create_proxy()
 
-    def blacklist(self, blacklist_urls):
+    def add_blacklist(self, blacklist_urls):
         '''
         Sets a list of URL patterns to blacklist
 
@@ -60,14 +60,23 @@ class Mobilenium(webdriver.Firefox):
                status code to return for URLs(value)
 
         '''
-        blacklist_urls = {}
-        for url in blacklist_urls:
-            self.proxy.blacklist(url, blacklist[url])
+        for pattern in blacklist_urls:
+            self.blacklist[pattern] = blacklist_urls[pattern]
+
+        for url in self.blacklist:
+            self.proxy.blacklist(url, self.blacklist[url])
+
+    @property
+    def har(self):
+        try:
+            har = self.proxy.har
+        except JSONDecodeError:
+            har = None
+        return har
 
     def get(self, url):
         self.proxy.new_har(options={'captureHeaders': True})
         super(webdriver.Firefox, self).get(url)
-        self.har = self.proxy.har
         return self.status_code
 
     def allow_insecure_certs(self):
