@@ -1,5 +1,9 @@
-.cache/
+__pycache__/
+.eggs/
+build/
+dist/
+mobilenium.egg-info/
+.cache
 *.pyc
 *.log
-__pycache__/
 .coverage
