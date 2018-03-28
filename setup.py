@@ -30,7 +30,7 @@ config = dict(
     classifiers=[
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
-        'License :: OSI Approved :: MIT License',
+        'License :: OSI Approved :: Apache Software License',
         'Development Status :: 2 - Pre-Alpha'],
     packages=pkgs,
     license='License :: OSI Approved :: MIT License',
