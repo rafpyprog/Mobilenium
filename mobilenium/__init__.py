@@ -15,7 +15,7 @@ Copyright 2017 Rafael Alves Ribeiro
 '''
 
 __title__ = 'mobilenium'
-__version__ = '0.0.3'
+__version__ = '0.0.4'
 __author__ = 'Rafael Alves Ribeiro'
 __license__ = 'Apache 2.0'
 __copyright__ = 'Copyright 2017 Rafael Alves Ribeiro'
