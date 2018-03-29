@@ -10,7 +10,7 @@ Mobilenium: Selenium with steroids
 .. image:: https://img.shields.io/pypi/pyversions/mobilenium.svg
    :target: https://pypi.python.org/pypi/mobilenium
 
-.. image:: https://img.shields.io/travis/rafpyprog/mobilenium.svg
+.. image:: https://api.travis-ci.org/rafpyprog/Mobilenium.svg
   :target: https://pypi.python.org/pypi/mobilenium
 
 .. image:: https://img.shields.io/codecov/c/github/rafpyprog/mobilenium.svg
