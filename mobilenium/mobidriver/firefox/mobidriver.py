@@ -18,13 +18,16 @@ from browsermobproxy import Server
 from selenium import webdriver
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
+from selenium.webdriver.firefox.options import Options
 from simplejson.scanner import JSONDecodeError
 
 
 class Mobilenium(webdriver.Firefox):
     def __init__(self, browsermob_binary=None, firefox_binary=None,
                  firefox_profile=None, capabilities=None,
-                 allow_insecure_certs=False, timeout=30):
+                 allow_insecure_certs=False, timeout=30, headless=False,
+                 firefox_options=None):
+
         self.browsermob_binary = browsermob_binary
         self.blacklist = {}
         self.set_browsermob_proxy()
@@ -35,9 +38,16 @@ class Mobilenium(webdriver.Firefox):
         if self.capabilities is True:
             self.allow_insecure_certs()
 
+        self.firefox_options = Options()
+        if headless is True:
+            self.firefox_options.add_argument('-headless')
+        if firefox_options:
+            [self.firefox_options.add_argument(arg) for arg in firefox_options]
+
         webdriver.Firefox.__init__(self, firefox_binary=self.firefox_binary,
                                    firefox_profile=self.profile,
-                                   capabilities=self.capabilities)
+                                   capabilities=self.capabilities,
+                                   firefox_options=self.firefox_options)
 
     def add_proxy_to_profile(self, profile):
         if profile is None:

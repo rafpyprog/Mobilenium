@@ -13,16 +13,17 @@ BROWSER_MOB_PATH = os.path.join(os.getcwd(), 'bin', 'browsermob-proxy-2.1.4',
                                 'bin', 'browsermob-proxy')
 
 
-
 def test_mobidriver_start():
-    mob = mobidriver.Firefox(BROWSER_MOB_PATH)
-    assert isinstance(mob, mobidriver.Firefox)
-    mob.quit()
+    try:
+        mob = mobidriver.Firefox(BROWSER_MOB_PATH, headless=True)
+        assert isinstance(mob, mobidriver.Firefox)
+    finally:
+        mob.quit()
 
 
 def test_mobidriver_get_url():
     try:
-        mob = mobidriver.Firefox(BROWSER_MOB_PATH)
+        mob = mobidriver.Firefox(BROWSER_MOB_PATH, headless=True)
         test_url = 'https://httpbin.org/ip'
         status_code = mob.get(test_url)
         assert mob.title == ''
@@ -32,13 +33,11 @@ def test_mobidriver_get_url():
 
 def test_mobidriver_har():
     try:
-        mob = mobidriver.Firefox(BROWSER_MOB_PATH)
+        mob = mobidriver.Firefox(BROWSER_MOB_PATH, headless=True)
         assert mob.har is None
         test_url = 'https://httpbin.org/ip'
         mob.get(test_url)
         assert isinstance(mob.har, dict)
-        with open('har.test', 'w') as f:
-            f.write(json.dumps(mob.har))
         assert isinstance(mob.har['log']['entries'], list)
     finally:
         mob.quit()
@@ -46,7 +45,7 @@ def test_mobidriver_har():
 
 def test_har_is_updating():
     try:
-        mob = mobidriver.Firefox(BROWSER_MOB_PATH)
+        mob = mobidriver.Firefox(BROWSER_MOB_PATH, headless=True)
 
         test_url = 'http://jkorpela.fi/forms/testing.html'
 
@@ -65,7 +64,7 @@ def test_har_is_updating():
 
 def test_blacklist_url():
     try:
-        mob = mobidriver.Firefox(BROWSER_MOB_PATH)
+        mob = mobidriver.Firefox(BROWSER_MOB_PATH, headless=True)
         assert mob.blacklist == {}
 
         test_url = 'http://jkorpela.fi/forms/testing.html'
