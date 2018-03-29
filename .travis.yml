@@ -6,6 +6,7 @@ env:
   - MOZ_HEADLESS=1
 addons:
   firefox: latest
+install: pip install codecov
 before_install:
   - wget https://github.com/mozilla/geckodriver/releases/download/v0.20.0/geckodriver-v0.20.0-linux64.tar.gz
   - mkdir geckodriver
