@@ -19,3 +19,5 @@ __version__ = '0.0.4'
 __author__ = 'Rafael Alves Ribeiro'
 __license__ = 'Apache 2.0'
 __copyright__ = 'Copyright 2017 Rafael Alves Ribeiro'
+
+from .mobidriver import Firefox

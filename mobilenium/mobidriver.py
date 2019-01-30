@@ -17,12 +17,11 @@ Copyright 2017 Rafael Alves Ribeiro
 from browsermobproxy import Server
 from selenium import webdriver
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
-from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
 from selenium.webdriver.firefox.options import Options
 from simplejson.scanner import JSONDecodeError
 
 
-class Mobilenium(webdriver.Firefox):
+class Firefox(webdriver.Firefox):
     def __init__(self, browsermob_binary=None, firefox_binary=None,
                  firefox_profile=None, capabilities=None,
                  allow_insecure_certs=False, timeout=30, headless=False,
