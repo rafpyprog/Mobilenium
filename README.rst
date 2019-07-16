@@ -16,6 +16,9 @@ Mobilenium: Selenium with steroids
 .. image:: https://img.shields.io/codecov/c/github/rafpyprog/mobilenium.svg
   :target: https://pypi.python.org/pypi/mobilenium
 
+.. image:: https://img.shields.io/pypi/dm/mobilenium.svg
+  :target: https://pypi.org/project/mobilenium/
+
 
 Mobilenium uses `BrowserMob Proxy <https://github.com/AutomatedTester/browsermob-proxy-py>`_ to give superpowers to Selenium.
 
